@@ -1,0 +1,40 @@
+1)Instalacion (Asumo que tienes los conocimientos minimos de linux)
+
+1) instalamos el servidor ssh
+sudo apt-get install openssh-server
+
+Iniciar,Parar,Reiniciar
+
+Iniciar:
+sudo /etc/init.d/ssh start
+Parar:
+sudo /etc/init.d/ssh stop
+
+Reiniciar
+sudo /etc/init.d/ssh restart
+
+
+2)Configuraciones de seguridad:
+1. Cambiar el puerto por defecto
+#Port 22  --> Port 254864
+
+2. Eliminamos el acceso remoto de usuario root.
+#PermitRootLogin prohibit-password --> PermitRootLogin no
+
+3. Reducimos el tiempo maximo permitido para escribir la contraseña.
+#LoginGraceTime 2m --> LoginGraceTime 30
+
+4. Reducimos el maximo de intentos de login seguidos.
+
+#MaxAuthTries 6 --> MaxAuthTries 3
+
+5.Reducimos el numero de conexiones simultaneas.
+#MaxStartups 10:30:100  --> MaxStartups 3
+
+6. Opcionalmente se puden usar AllowUsers para permitir  el login solo los usuarios listados.
+AllowUsers usuario
+7.Opcionalmente se pude usar DenyUsers para denegar el login a los usuarios listados.
+DenyUsers david
+
+3) Despues de cambiar la configuracion debemos reiniciar el servicio.
+sudo /etc/init.d/ssh restart
