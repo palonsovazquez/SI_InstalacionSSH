@@ -1,9 +1,7 @@
 #!/bin/bash
-#Ejemplo #2: Script que muestra como asignar valores a variables en forma interactiva por el
-#            usuario, uso de la funcion read.
-#Author: Gonzalo Silverio  -> gonzasilve@gmail.com
-#Archivo: sInstalacionSSh.sh
-#pedir el dato al usuario
+#Author: Pablo Alonso Vázquez -> pav.vigo@gmail.com
+#Archivo: InstalacionSSh.sh
+
 archivo='/etc/ssh/sshd_config'
 puerto=1
 clear
